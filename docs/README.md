@@ -24,7 +24,7 @@ Projeyi çalıştırmadan önce arayüze göz atın:
 
 ### 🎨 Örnek: ARCH-BUILDER ile Kurulmuş Sistem
 
-![Hyprland Desktop](https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/hyde_banner.png)
+![Hyprland Desktop](https://raw.githubusercontent.com/almewr/hyprland-rice/main/screenshot.png)
 *ARCH-BUILDER kullanılarak kurulmuş Hyprland masaüstü (Örnek Rice)*
 
 ---
