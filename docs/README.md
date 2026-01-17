@@ -22,6 +22,11 @@ Projeyi çalıştırmadan önce arayüze göz atın:
 | :---: | :---: |
 | ![AI Modu](assets/ai_interface_1768676945679.png) | ![Yapılandırılmış](assets/configured_wizard_1768677009058.png) |
 
+### 🎨 Örnek: ARCH-BUILDER ile Kurulmuş Sistem
+
+![Hyprland Desktop](https://raw.githubusercontent.com/sumithemmadi/hyprland-dotfiles/main/pics/screenshot_one.png)
+*ARCH-BUILDER kullanılarak kurulmuş Hyprland masaüstü (Örnek Rice)*
+
 ---
 
 ## 🚀 Temel Özellikler

@@ -18,6 +18,11 @@
 | :---: | :---: |
 | ![AI Modu](docs/assets/ai_interface_1768676945679.png) | ![Yapılandırılmış](docs/assets/configured_wizard_1768677009058.png) |
 
+### 🎨 Örnek: ARCH-BUILDER ile Kurulmuş Sistem
+
+![Hyprland Desktop](https://raw.githubusercontent.com/sumithemmadi/hyprland-dotfiles/main/pics/screenshot_one.png)
+*ARCH-BUILDER kullanılarak kurulmuş Hyprland masaüstü (Örnek Rice)*
+
 ---
 
 ## ⚡ Hızlı Başlangıç
