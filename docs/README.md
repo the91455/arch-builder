@@ -8,18 +8,13 @@
 
 Projeyi çalıştırmadan önce arayüze göz atın:
 
-````carousel
-![Ana Menü](assets/main_menu_1768676866502.png)
-<!-- slide -->
-![Manuel Yapılandırma](assets/offline_wizard_interaction_1768677027876.png)
-<!-- slide -->
-![AI Modu](assets/ai_interface_1768676945679.png)
-<!-- slide -->
-```text
-Video: Arayüz Kullanım Gösterimi
-```
-![Kullanım Videosu](assets/ui_showcase_1768676858000.webp)
-````
+| Ana Menü | Manuel Yapılandırma |
+| :---: | :---: |
+| ![Ana Menü](assets/main_menu_1768676866502.png) | ![Manuel Yapılandırma](assets/offline_wizard_interaction_1768677027876.png) |
+
+| AI Modu | Kullanım Videosu (Demo) |
+| :---: | :---: |
+| ![AI Modu](assets/ai_interface_1768676945679.png) | ![Kullanım Videosu](assets/ui_showcase_1768676858000.webp) |
 
 ---
 
