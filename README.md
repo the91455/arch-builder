@@ -20,7 +20,7 @@
 
 ### 🎨 Örnek: ARCH-BUILDER ile Kurulmuş Sistem
 
-![Hyprland Desktop](https://raw.githubusercontent.com/sumithemmadi/hyprland-dotfiles/main/pics/screenshot_one.png)
+![Hyprland Desktop](https://raw.githubusercontent.com/prasanthrangan/hyprdots/main/Source/assets/hyde_banner.png)
 *ARCH-BUILDER kullanılarak kurulmuş Hyprland masaüstü (Örnek Rice)*
 
 ---
