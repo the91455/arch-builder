@@ -4,9 +4,15 @@
 
 ## 📸 Arayüz Görüntüleri
 
-| Ana Menü | Manuel Yapılandırma |
+### Ana Menü
+
+![Ana Menü](docs/assets/main_menu_1768676866502.png)
+
+### Diğer Ekranlar
+
+| Manuel Yapılandırma (Başlangıç) | Manuel Yapılandırma (Seçimli) |
 | :---: | :---: |
-| ![Ana Menü](docs/assets/main_menu_1768676866502.png) | ![Manuel Yapılandırma](docs/assets/offline_wizard_interaction_1768677027876.png) |
+| ![Offline Wizard](docs/assets/offline_wizard_1768676882577.png) | ![Configured Wizard](docs/assets/offline_wizard_interaction_1768677027876.png) |
 
 | AI Modu | Yapılandırılmış Sihirbaz |
 | :---: | :---: |

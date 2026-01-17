@@ -8,9 +8,15 @@
 
 Projeyi çalıştırmadan önce arayüze göz atın:
 
-| Ana Menü | Manuel Yapılandırma |
+### Ana Menü
+
+![Ana Menü](assets/main_menu_1768676866502.png)
+
+### Diğer Ekranlar
+
+| Manuel Yapılandırma (Başlangıç) | Manuel Yapılandırma (Seçimli) |
 | :---: | :---: |
-| ![Ana Menü](assets/main_menu_1768676866502.png) | ![Manuel Yapılandırma](assets/offline_wizard_interaction_1768677027876.png) |
+| ![Offline Wizard](assets/offline_wizard_1768676882577.png) | ![Configured Wizard](assets/offline_wizard_interaction_1768677027876.png) |
 
 | AI Modu | Yapılandırılmış Sihirbaz |
 | :---: | :---: |
