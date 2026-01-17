@@ -8,13 +8,19 @@
 
 Projeyi çalıştırmadan önce arayüze göz atın:
 
+### 🎬 Demo Video
+
+![UI Demo](assets/demo.webp)
+
+### 📷 Ekran Görüntüleri
+
 | Ana Menü | Manuel Yapılandırma |
 | :---: | :---: |
 | ![Ana Menü](assets/main_menu_1768676866502.png) | ![Manuel Yapılandırma](assets/offline_wizard_interaction_1768677027876.png) |
 
-| AI Modu | Kullanım Videosu (Demo) |
+| AI Modu | Yapılandırılmış Sihirbaz |
 | :---: | :---: |
-| ![AI Modu](assets/ai_interface_1768676945679.png) | ![Kullanım Videosu](assets/ui_showcase_1768676858000.webp) |
+| ![AI Modu](assets/ai_interface_1768676945679.png) | ![Yapılandırılmış](assets/configured_wizard_1768677009058.png) |
 
 ---
 
