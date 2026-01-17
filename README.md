@@ -44,7 +44,7 @@ Karmaşık kurulumları yapay zekaya devredin. Sadece ihtiyacınızı yazın, o 
 
 1. **Depoyu Klonlayın:**
    ```bash
-   git clone <repo-url>
+   git clone https://github.com/the91455/arch-builder.git
    cd arch-builder
    ```
 
