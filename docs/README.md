@@ -1,0 +1,31 @@
+# 🏗️ ARCH-BUILDER v1.1 [TUI-READY]
+
+**ARCH-BUILDER**, Arch Linux kurulum sürecini otomatize eden ve modern bir TUI estetiğiyle sunan gelişmiş bir script oluşturma platformudur.
+
+---
+
+## ⚡ Hızlı Başlangıç
+
+1.  **Backend'i Hazırlayın:**
+    ```bash
+    cd backend && npm install
+    cp .env.example .env # API anahtarlarınızı ekleyin
+    node server.js
+    ```
+2.  **Frontend'i Açın:** `frontend/index.html` dosyasını tarayıcınızda açın.
+
+---
+
+## 📚 Detaylı Dökümantasyon
+
+Proje dökümantasyonu `docs/` klasörü altına taşınmıştır:
+
+-   📄 **[Kullanım Kılavuzu & Özellikler](docs/README.md)**: Projenin tüm özelliklerini ve temel kurulum adımlarını içerir.
+-   🏗️ **[Teknik Mimari (Architecture)](docs/ARCHITECTURE.md)**: AI çalışma mantığı, fallback mekanizmaları ve proje yapısı detayları.
+
+---
+
+## ⚠️ Uyarı
+Üretilen scriptler sisteminizi formatlayabilir. Çalıştırmadan önce içeriği kontrol etmeyi unutmayın.
+
+**Developed with ❤️ for Arch Linux Users.**
