@@ -2,13 +2,7 @@
 
 **ARCH-BUILDER**, Arch Linux kurulum sürecini otomatize eden ve modern bir TUI estetiğiyle sunan gelişmiş bir script oluşturma platformudur.
 
-## 📸 Görsel Önizleme
-
-### 🎬 Demo Video
-
-![UI Demo](docs/assets/demo.webp)
-
-### 📷 Ekran Görüntüleri
+## 📸 Arayüz Görüntüleri
 
 | Ana Menü | Manuel Yapılandırma |
 | :---: | :---: |

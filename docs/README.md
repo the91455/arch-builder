@@ -4,15 +4,9 @@
 
 ---
 
-## 📸 Görsel Önizleme
+## 📸 Arayüz Görüntüleri
 
 Projeyi çalıştırmadan önce arayüze göz atın:
-
-### 🎬 Demo Video
-
-![UI Demo](assets/demo.webp)
-
-### 📷 Ekran Görüntüleri
 
 | Ana Menü | Manuel Yapılandırma |
 | :---: | :---: |
