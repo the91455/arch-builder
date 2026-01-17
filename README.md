@@ -22,6 +22,7 @@ Proje dökümantasyonu `docs/` klasörü altına taşınmıştır:
 
 -   📄 **[Kullanım Kılavuzu & Özellikler](docs/README.md)**: Projenin tüm özelliklerini ve temel kurulum adımlarını içerir.
 -   🏗️ **[Teknik Mimari (Architecture)](docs/ARCHITECTURE.md)**: AI çalışma mantığı, fallback mekanizmaları ve proje yapısı detayları.
+-   ❓ **[Sıkça Sorulan Sorular (FAQ)](docs/FAQ.md)**: Genel sorular ve yanıtları.
 
 ---
 
