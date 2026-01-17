@@ -4,7 +4,26 @@
 
 ---
 
-## ⚡ Hızlı Başlangıç
+## 📸 Görsel Önizleme
+
+Projeyi çalıştırmadan önce arayüze göz atın:
+
+````carousel
+![Ana Menü](assets/main_menu_1768676866502.png)
+<!-- slide -->
+![Manuel Yapılandırma](assets/offline_wizard_interaction_1768677027876.png)
+<!-- slide -->
+![AI Modu](assets/ai_interface_1768676945679.png)
+<!-- slide -->
+```text
+Video: Arayüz Kullanım Gösterimi
+```
+![Kullanım Videosu](assets/ui_showcase_1768676858000.webp)
+````
+
+---
+
+## 🚀 Temel Özellikler
 
 1.  **Backend'i Hazırlayın:**
     ```bash
@@ -18,10 +37,10 @@
 
 ## 📚 Detaylı Dökümantasyon
 
-Proje dökümantasyonu `docs/` klasörü altına taşınmıştır:
+Şu an ana dökümantasyon dosyasındasınız. Diğer önemli kaynaklar:
 
--   📄 **[Kullanım Kılavuzu & Özellikler](docs/README.md)**: Projenin tüm özelliklerini ve temel kurulum adımlarını içerir.
--   🏗️ **[Teknik Mimari (Architecture)](docs/ARCHITECTURE.md)**: AI çalışma mantığı, fallback mekanizmaları ve proje yapısı detayları.
+-   🏗️ **[Teknik Mimari (Architecture)](ARCHITECTURE.md)**: AI çalışma mantığı, fallback mekanizmaları ve proje yapısı detayları.
+-   ❓ **[Sıkça Sorulan Sorular (FAQ)](FAQ.md)**: Genel sorular ve yanıtları.
 
 ---
 
