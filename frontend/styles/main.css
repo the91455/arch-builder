@@ -1,0 +1,248 @@
+/* ===== Arch-Builder Pure TUI Theme ===== */
+
+:root {
+    --tui-bg: #000000;
+    --tui-blue: #00aaff;
+    --tui-blue-dim: rgba(0, 170, 255, 0.2);
+    --tui-white: #ffffff;
+    --tui-border: #00aaff;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 0 !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+}
+
+body {
+    background: var(--tui-bg);
+    color: var(--tui-blue);
+    font-family: var(--font-mono);
+    line-height: 1.4;
+    padding: 20px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border: 1px solid var(--tui-border);
+    padding: 20px;
+    position: relative;
+}
+
+/* ===== TUI Elements ===== */
+
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    display: inline-block;
+    background: var(--tui-blue);
+    color: var(--tui-bg);
+    padding: 0 10px;
+}
+
+.tui-header-line {
+    border-bottom: 1px solid var(--tui-border);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ===== Menu & Navigation ===== */
+
+.mode-selection {
+    text-align: center;
+}
+
+.mode-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.mode-card {
+    border: 1px solid var(--tui-border);
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.1s;
+}
+
+.mode-card:hover {
+    background: var(--tui-blue-dim);
+}
+
+.mode-card h3 {
+    background: none;
+    color: var(--tui-blue);
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.mode-features {
+    list-style: none;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* ===== Buttons ===== */
+
+.btn {
+    background: var(--tui-bg);
+    color: var(--tui-blue);
+    border: 1px solid var(--tui-border);
+    padding: 5px 15px;
+    font-family: var(--font-mono);
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.btn:hover {
+    background: var(--tui-blue);
+    color: var(--tui-bg);
+}
+
+.btn-primary {
+    border-width: 2px;
+    font-weight: bold;
+}
+
+.btn-success {
+    border-color: #00ff00;
+    color: #00ff00;
+}
+
+.btn-success:hover {
+    background: #00ff00;
+    color: #000;
+}
+
+.btn-back {
+    border: 1px dashed var(--tui-border);
+}
+
+/* ===== Offline TUI Mode ===== */
+
+.tui-container {
+    border: 1px solid var(--tui-border);
+    padding: 15px;
+}
+
+.tui-section {
+    margin-bottom: 20px;
+    border: 1px solid var(--tui-border);
+    padding: 10px;
+}
+
+.tui-section-title {
+    color: var(--tui-white);
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.tui-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.tui-option {
+    border: 1px solid var(--tui-border);
+    padding: 8px;
+    cursor: pointer;
+}
+
+.tui-option:hover {
+    background: var(--tui-blue-dim);
+}
+
+.tui-option.selected {
+    background: var(--tui-blue);
+    color: var(--tui-bg);
+}
+
+.tui-sub-branches {
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-left: 10px;
+    border-left: 1px dashed var(--tui-border);
+}
+
+/* ===== AI Mode ===== */
+
+.ai-chat-container {
+    border: 1px solid var(--tui-border);
+    padding: 15px;
+}
+
+#ai-input {
+    width: 100%;
+    background: var(--tui-bg);
+    color: var(--tui-blue);
+    border: 1px solid var(--tui-border);
+    padding: 10px;
+    font-family: var(--font-mono);
+    resize: none;
+    margin-bottom: 15px;
+}
+
+#ai-input:focus {
+    outline: none;
+    border-style: dashed;
+}
+
+/* ===== Output Panel ===== */
+
+.script-preview {
+    border: 1px solid var(--tui-border);
+    padding: 15px;
+    background: #050505;
+    overflow: auto;
+    max-height: 500px;
+}
+
+.script-preview pre {
+    color: var(--tui-blue);
+}
+
+.script-warnings {
+    border: 1px solid #ff0000;
+    color: #ff0000;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.script-warnings h3 {
+    background: #ff0000;
+    color: #000;
+}
+
+/* ===== Utilities ===== */
+
+.hidden {
+    display: none !important;
+}
+
+/* ===== Animations (None for pure TUI, but maybe a blink) ===== */
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.blink {
+    animation: blink 1s step-end infinite;
+}

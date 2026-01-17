@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARCH-BUILDER v1.1 [TUI-READY]</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Main TUI Header (Pure Text) -->
+        <div class="tui-header-line">
+            <div class="tui-title">[ ARCH-BUILDER :: TERMINAL_INSTALLER_v1.1 ]</div>
+            <div class="tui-clock" id="tui-clock">21:07:22</div>
+        </div>
+
+        <!-- Mode Selection / Main Menu -->
+        <div id="mode-selection" class="mode-selection">
+            <h1>ANA MENÜ</h1>
+            <div class="mode-cards">
+                <div class="mode-card" id="offline-mode-btn">
+                    <h3>[ 1 ] OFF-LINE MOD (MANUEL YAPILANDIRMA)</h3>
+                    <p>Adım adım TUI konfigürasyonu.</p>
+                    <ul class="mode-features">
+                        <li>- Disk Bölümleme (Largest Disk Support)</li>
+                        <li>- Kernel & Bootloader Seçimi</li>
+                        <li>- Masaüstü Ortamları & WM</li>
+                    </ul>
+                </div>
+
+                <div class="mode-card" id="ai-mode-btn">
+                    <h3>[ 2 ] AI-ASSISTED MOD (GEMINI ENGINE)</h3>
+                    <p>Doğal dil ile sistem tanımlama.</p>
+                    <ul class="mode-features">
+                        <li>- Akıllı Paket Analizi</li>
+                        <li>- Otomatik Script Üretimi</li>
+                    </ul>
+                </div>
+            </div>
+            <p style="margin-top: 20px; color: var(--tui-white); font-size: 0.8rem;" class="blink">SİSTEM HAZIR. SEÇİM
+                YAPIN..._</p>
+        </div>
+
+        <!-- Offline Mode TUI -->
+        <div id="offline-wizard" class="tui-container hidden">
+            <div class="tui-header-line">
+                <div class="tui-logo"> [ OFFLINE_CONFIGURATION_WIZARD ] </div>
+                <button id="back-to-modes" class="btn btn-back">EXIT [ESC]</button>
+            </div>
+
+            <div class="tui-content" id="wizard-content">
+                <!-- Section 1: Disk Configuration -->
+                <div class="tui-section" data-section="disk">
+                    <div class="tui-section-title">> DISK_CONFIG</div>
+                    <div class="tui-grid">
+                        <div class="tui-option" data-value="en-buyuk"> EN_BUYUK_DISK [AUTO] </div>
+                        <div class="tui-option" data-value="/dev/sda"> /dev/sda (SATA) </div>
+                        <div class="tui-option" data-value="/dev/nvme0n1"> /dev/nvme0n1 (NVMe) </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Filesystem -->
+                <div class="tui-section" data-section="fs">
+                    <div class="tui-section-title">> FILESYSTEM</div>
+                    <div class="tui-grid">
+                        <div class="tui-option" data-value="ext4">EXT4 (STABLE)</div>
+                        <div class="tui-option" data-value="btrfs">BTRFS (ADVANCED)</div>
+                        <div class="tui-option" data-value="xfs">XFS (PERFORMANCE)</div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Kernel -->
+                <div class="tui-section" data-section="kernel">
+                    <div class="tui-section-title">> KERNEL_RELEASE</div>
+                    <div class="tui-grid">
+                        <div class="tui-option" data-value="linux">LINUX_STABLE</div>
+                        <div class="tui-option" data-value="linux-lts">LINUX_LTS</div>
+                        <div class="tui-option" data-value="linux-zen">LINUX_ZEN</div>
+                    </div>
+                </div>
+
+                <!-- Section 4: Desktop Environment -->
+                <div class="tui-section" data-section="de">
+                    <div class="tui-section-title">> INTERFACE_SELECTION</div>
+                    <div class="tui-grid">
+                        <div class="tui-option" data-value="none">NO_GUI</div>
+                        <div class="tui-option de-branch" data-branch="gnome">GNOME</div>
+                        <div class="tui-option de-branch" data-branch="kde">KDE_PLASMA</div>
+                        <div class="tui-option de-branch" data-branch="cinnamon">CINNAMON</div>
+                        <div class="tui-option de-branch" data-branch="xfce">XFCE4</div>
+                        <div class="tui-option de-branch" data-branch="hyprland">HYPRLAND_WM</div>
+                    </div>
+
+                    <div id="de-sub-gnome" class="tui-sub-branches hidden">
+                        <div class="tui-option" data-value="gnome-full">GNOME_FULL</div>
+                        <div class="tui-option" data-value="gnome-minimal">GNOME_MINIMAL</div>
+                    </div>
+                    <div id="de-sub-kde" class="tui-sub-branches hidden">
+                        <div class="tui-option" data-value="kde-full">KDE_FULL</div>
+                        <div class="tui-option" data-value="kde-plasma">PLASMA_BASE</div>
+                    </div>
+                </div>
+
+                <!-- Section 5: GPU -->
+                <div class="tui-section" data-section="gpu">
+                    <div class="tui-section-title">> GPU_DRIVERS</div>
+                    <div class="tui-grid">
+                        <div class="tui-option" data-value="mesa">OPEN_MESA (AMD/INTEL)</div>
+                        <div class="tui-option" data-value="nvidia">NVIDIA_NONFREE</div>
+                        <div class="tui-option" data-value="nvidia-lts">NVIDIA_NONFREE_LTS</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tui-footer" style="margin-top: 20px; text-align: right;">
+                <button id="generate-script" class="btn btn-success">GENERATE_SCRIPT.sh [RUN]</button>
+            </div>
+        </div>
+
+        <!-- AI Mode Interface -->
+        <div id="ai-mode" class="ai-mode hidden">
+            <div class="tui-header-line">
+                <h2>AI_ENGINE_PROMPT</h2>
+                <button id="back-to-modes-ai" class="btn btn-back">BACK [ESC]</button>
+            </div>
+
+            <div class="ai-chat-container">
+                <div class="tui-section">
+                    <div class="tui-section-title">> AI_PROVIDER</div>
+                    <div class="tui-grid" id="ai-provider-list">
+                        <div class="tui-option selected" data-provider="gemini">GEMINI (GOOGLE)</div>
+                        <div class="tui-option" data-provider="openai">CHATGPT (OPENAI)</div>
+                        <div class="tui-option" data-provider="anthropic">CLAUDE (ANTHROPIC)</div>
+                    </div>
+                </div>
+
+                <div class="tui-section">
+                    <div class="tui-section-title">> API_KEY (OPTIONAL)</div>
+                    <input type="password" id="ai-api-key"
+                        placeholder="Enter API Key (Leave blank to use server default)..."
+                        style="width: 100%; background: var(--tui-bg); color: var(--tui-blue); border: 1px solid var(--tui-border); padding: 5px; font-family: var(--font-mono);">
+                </div>
+
+                <div class="tui-section">
+                    <div class="tui-section-title">> PROMPT_INPUT</div>
+                    <textarea id="ai-input"
+                        placeholder="Sistem gereksinimlerini buraya yazın... (örn: Hyprland + NVIDIA + Gaming)"
+                        rows="4"></textarea>
+                    <button id="generate-ai-script" class="btn btn-primary" style="width: 100%;">AI_GENERATE.sh
+                        [EXEC]</button>
+                </div>
+
+                <div id="ai-status" class="tui-section hidden">
+                    <div class="tui-section-title">> SYSTEM_LOG</div>
+                    <div id="ai-status-content">Hazırlanıyor...</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Script Output Panel -->
+        <div id="output-panel" class="output-panel hidden">
+            <div class="tui-header-line">
+                <h2>GENERATED_OUTPUT</h2>
+                <div class="output-actions">
+                    <button id="copy-script" class="btn">COPY [C]</button>
+                    <button id="download-script" class="btn">SAVE [S]</button>
+                    <button id="new-script" class="btn">RESET [R]</button>
+                </div>
+            </div>
+
+            <div class="script-preview">
+                <pre><code id="script-content"></code></pre>
+            </div>
+
+            <div class="script-warnings">
+                <h3>!!! CRITICAL_WARNINGS !!!</h3>
+                <ul>
+                    <li>* BU SCRIPT DISKINIZE FORMAT ATAR.</li>
+                    <li>* KURULUM ONCESI ICERIGI KONTROL EDIN.</li>
+                    <li>* VERILERINIZI YEDEKLEDIGINIZDEN EMIN OLUN.</li>
+                    <li>* ROOT YETKISI GEREKTIRIR.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/template-engine.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/wizard.js"></script>
+    <script src="js/ai-mode.js"></script>
+    <script>
+        // Simple TUI Clock
+        setInterval(() => {
+            document.getElementById('tui-clock').innerText = new Date().toLocaleTimeString('tr-TR');
+        }, 1000);
+    </script>
+</body>
+
+</html>
