@@ -29,67 +29,84 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function generateAIScript() {
     const aiInput = document.getElementById('ai-input');
-    const apiKeyInput = document.getElementById('ai-api-key');
     const generateBtn = document.getElementById('generate-ai-script');
     const statusDiv = document.getElementById('ai-status');
     const statusContent = document.getElementById('ai-status-content');
+    const outputPanel = document.getElementById('output-panel');
+    const scriptElement = document.getElementById('script-content');
 
     const userRequest = aiInput.value.trim();
-    const apiKey = apiKeyInput.value.trim();
-
     if (!userRequest) {
         showStatus('Lütfen bir kurulum isteği girin', 'error');
         return;
     }
 
-    // Show loading state
-    generateBtn.innerText = 'GENERATE_AI_SCRIPT.sh [LOADING...]';
-    generateBtn.disabled = true;
-    statusDiv.classList.add('hidden');
+    // --- UI Setup for Streaming ---
+    generateBtn.innerText = 'GENERATING... [CANCEL]';
+    statusDiv.classList.remove('hidden');
+    showStatus(`AI (${selectedProvider.toUpperCase()}) script oluşturuyor...`, 'info');
 
-    try {
-        showStatus(`AI (${selectedProvider.toUpperCase()}) script oluşturuyor... Bu 10-30 saniye sürebilir.`, 'info');
+    // Clear previous output and show panel
+    scriptElement.textContent = ''; // Start with an empty script
+    outputPanel.classList.remove('hidden');
+    outputPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-        const response = await fetch('/api/ai/generate', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                userRequest,
-                provider: selectedProvider,
-                apiKey: apiKey || null
-            })
-        });
+    // --- EventSource Implementation ---
+    const evtSource = new EventSource(`/api/ai/generate?userRequest=${encodeURIComponent(userRequest)}&provider=${selectedProvider}`);
+    let fullScript = '';
 
-        if (!response.ok) {
-            const error = await response.json();
-            throw new Error(error.message || 'API isteği başarısız');
-        }
-
-        const data = await response.json();
-
-        if (data.success && data.script) {
-            showStatus('✓ Script başarıyla oluşturuldu!', 'success');
-            window.displayScript(data.script);
-        } else {
-            throw new Error('Script oluşturulamadı');
-        }
-
-    } catch (error) {
-        console.error('AI generation error:', error);
-        let errorMessage = 'Script oluşturulurken bir hata oluştu: ' + error.message;
-
-        if (error.message.includes('API key')) {
-            errorMessage = '⚠️ API anahtarı geçersiz veya bulunamadı.';
-        }
-
-        showStatus(errorMessage, 'error');
-    } finally {
-        // Reset button state
+    const cleanup = () => {
+        evtSource.close();
         generateBtn.innerText = 'AI_GENERATE.sh [EXEC]';
-        generateBtn.disabled = false;
-    }
+        generateBtn.onclick = generateAIScript; // Restore original function
+    };
+
+    // --- Event Listeners ---
+    evtSource.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+
+        if (data.event === 'done') {
+            showStatus(`✓ Script başarıyla oluşturuldu! (Model: ${data.metadata.model})`, 'success');
+            // Final cleanup of the script content, removing markdown
+            if (fullScript.trim().endsWith("```")) {
+                fullScript = fullScript.trim().slice(0, -3).trim();
+            }
+            if (!fullScript.trim().startsWith('#!/bin/bash')) {
+                fullScript = '#!/bin/bash\n\n' + fullScript;
+            }
+            scriptElement.textContent = fullScript;
+            cleanup();
+            return;
+        }
+
+        if (data.event === 'error') {
+            let errorMessage = `Script oluşturulurken bir hata oluştu: ${data.message}`;
+            if (data.message.includes('API key')) {
+                errorMessage = '⚠️ Sunucu tarafında API anahtarı geçersiz veya bulunamadı.';
+            }
+            showStatus(errorMessage, 'error');
+            cleanup();
+            return;
+        }
+
+        if (data.chunk) {
+            fullScript += data.chunk;
+            scriptElement.textContent = fullScript + '█'; // Add blinking cursor effect
+        }
+    };
+
+    evtSource.onerror = (err) => {
+        console.error("EventSource failed:", err);
+        showStatus('Bağlantı hatası oluştu. Lütfen tekrar deneyin.', 'error');
+        cleanup();
+    };
+
+    // --- Cancel Button Logic ---
+    generateBtn.onclick = () => {
+        console.log("Stream cancelled by user.");
+        showStatus('İşlem kullanıcı tarafından iptal edildi.', 'warning');
+        cleanup();
+    };
 }
 
 function showStatus(message, type) {
